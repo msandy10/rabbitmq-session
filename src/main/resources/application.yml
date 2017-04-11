@@ -1,0 +1,44 @@
+server:
+  port: 9080
+  context-path: /redis-service
+  
+management:
+  context-path: /admin
+  security:
+    enabled: false
+    
+security:
+  basic:
+    enabled: false
+
+spring:
+  application:
+    name: redis-service 
+  profiles:
+    active: development
+  session:
+    store-type: redis
+  jpa:
+     generate-ddl: true
+     show-sql: true
+     hibernate:
+      ddl-auto: create-drop
+#    continue-on-error : true
+--- 
+spring:
+  profiles: development
+  
+  datasource:
+    database: postgresql
+    platform: postgres
+    driver-class-name: org.postgresql.Driver
+    url:  jdbc:postgresql://localhost:5432/cloud-db 
+    username: postgres
+    password: postgres@123
+---
+spring:
+  profiles: cloud
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${cloud.service.sm-test-db.connection.jdbcurl}
+    max-active: 1 
