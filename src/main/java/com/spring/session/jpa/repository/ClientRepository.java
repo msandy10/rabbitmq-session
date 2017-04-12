@@ -1,4 +1,4 @@
-package com.spring.session.repository;
+package com.spring.session.jpa.repository;
 
 import java.util.List;
 

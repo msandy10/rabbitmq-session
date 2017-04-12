@@ -1,3 +1,4 @@
+/*
 CREATE TABLE car (
 	id bigint NOT NULL,
 	make varchar(100),
@@ -5,3 +6,4 @@ CREATE TABLE car (
 	year int,
 	PRIMARY KEY (id)
 );
+*/

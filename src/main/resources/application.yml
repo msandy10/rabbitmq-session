@@ -15,7 +15,7 @@ spring:
   application:
     name: redis-service 
   profiles:
-    active: development
+    active: development #cloud
   session:
     store-type: redis
   jpa:
@@ -29,12 +29,12 @@ spring:
   profiles: development
   
   datasource:
-    database: postgresql
-    platform: postgres
-    driver-class-name: org.postgresql.Driver
-    url:  jdbc:postgresql://localhost:5432/cloud-db 
-    username: postgres
-    password: postgres@123
+    database: mysql
+    platform: mysql
+    driver-class-name: com.mysql.jdbc.Driver
+    url:  jdbc:mysql://localhost:3306/notedb 
+    username: root
+    password: passcode
 ---
 spring:
   profiles: cloud

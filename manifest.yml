@@ -5,7 +5,7 @@ applications:
   path: build/libs/redis-service.jar
   timeout: 180
   services:
-  - sm-cloud-sesion
+  - cache-service
   - sm-test-db
   env:
     SPRING_PROFILES_ACTIVE: cloud
