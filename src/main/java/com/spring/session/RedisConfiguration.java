@@ -2,6 +2,7 @@ package com.spring.session;
 
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheManager;
@@ -16,8 +17,9 @@ import com.spring.session.pojo.Student;
 
 @Configuration
 @EnableRedisRepositories(basePackages = "com.spring.session.redis.repository")
+@EnableCaching
 public class RedisConfiguration extends CachingConfigurerSupport {
-
+	
 	@Bean
 	JedisConnectionFactory jedisConnectionFactory() {
 		return new JedisConnectionFactory();
